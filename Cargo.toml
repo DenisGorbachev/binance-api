@@ -1,5 +1,6 @@
 [workspace]
 resolver = "3"
+members = ["packages/binance-api-cli", "packages/binance-api-rest"]
 
 [workspace.package]
 version = "0.1.0"
@@ -43,24 +44,7 @@ unused_import_braces = "deny"
 absolute_paths = "deny"
 arithmetic_side_effects = "deny"
 
-[package]
-name = "binance-api"
-version.workspace = true
-edition.workspace = true
-rust-version.workspace = true
-homepage.workspace = true
-repository.workspace = true
-keywords.workspace = true
-categories.workspace = true
-exclude.workspace = true
-
-[package.metadata.details]
-title = ""
-
-[lints]
-workspace = true
-
-[dependencies]
+[workspace.dependencies]
 derive-getters = { version = "0.5.0", features = ["auto_copy_getters"] }
 derive-new = "0.7.0"
 derive_more = { version = "2.1.1", features = ["full"] }

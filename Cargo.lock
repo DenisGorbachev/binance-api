@@ -3,7 +3,11 @@
 version = 4
 
 [[package]]
-name = "binance-api"
+name = "binance-api-cli"
+version = "0.1.0"
+
+[[package]]
+name = "binance-api-rest"
 version = "0.1.0"
 dependencies = [
  "derive-getters",

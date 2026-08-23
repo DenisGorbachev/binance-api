@@ -2116,8 +2116,8 @@ if_missing = "error"
 env = "exec"
 
 [providers]
-keychain = { type = "keychain", service = "rust-private-lib-template" }
-pass = { type = "password-store", prefix = "rust-private-lib-template/" }
+keychain = { type = "keychain", service = "binance-api" }
+pass = { type = "password-store", prefix = "binance-api/" }
 age = { type = "age", recipients = [
     "age1sf4r4amev2svqr6llwg8hgtz9n7p5qdh7hh0mavcshzfrmgfduksnq3hql",
     "age1605gsnxpe536sprwccyumq74veg0g80u55n8ggems0t8deau6qdsfnq3m3"
@@ -2129,13 +2129,14 @@ age = { type = "age", recipients = [
 ```toml
 [workspace]
 resolver = "3"
+members = ["packages/binance-api-cli", "packages/binance-api-rest"]
 
 [workspace.package]
 version = "0.1.0"
 edition = "2024"
 rust-version = "1.93.1"
-homepage = "https://github.com/DenisGorbachev/rust-pre-public-lib-template"
-repository = "https://github.com/DenisGorbachev/rust-pre-public-lib-template"
+homepage = "https://github.com/DenisGorbachev/binance-api"
+repository = "https://github.com/DenisGorbachev/binance-api"
 keywords = []
 categories = []
 exclude = [
@@ -2158,8 +2159,8 @@ exclude = [
 ]
 
 [workspace.metadata.details]
-name = "rust-pre-public-lib-template"
-title = "Rust pre-public lib template"
+name = "binance-api"
+title = ""
 readme = { generate = false }
 
 [workspace.lints.rust]
@@ -2172,25 +2173,7 @@ unused_import_braces = "deny"
 absolute_paths = "deny"
 arithmetic_side_effects = "deny"
 
-[package]
-name = "rust-pre-public-lib-template"
-version.workspace = true
-edition.workspace = true
-rust-version.workspace = true
-description = "A template for creating Rust pre-public libs."
-homepage.workspace = true
-repository.workspace = true
-keywords.workspace = true
-categories.workspace = true
-exclude.workspace = true
-
-[package.metadata.details]
-title = "Rust pre-public lib template"
-
-[lints]
-workspace = true
-
-[dependencies]
+[workspace.dependencies]
 derive-getters = { version = "0.5.0", features = ["auto_copy_getters"] }
 derive-new = "0.7.0"
 derive_more = { version = "2.1.1", features = ["full"] }
@@ -2202,20 +2185,67 @@ stub-macro = { version = "0.2.1" }
 subtype = { git = "https://github.com/DenisGorbachev/subtype" }
 ```
 
-#### fnox.toml
+#### packages/binance-api-cli/Cargo.toml
 
 ```toml
-#:schema https://fnox.jdx.dev/schema.json
+[package]
+name = "binance-api-cli"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+homepage.workspace = true
+repository.workspace = true
+keywords.workspace = true
+categories.workspace = true
+exclude.workspace = true
 
-if_missing = "error"
+[package.metadata.details]
+title = "Binance API CLI"
 
-[providers]
-keychain = { type = "keychain", service = "rust-pre-public-lib-template" }
-pass = { type = "password-store", prefix = "rust-pre-public-lib-template/" }
+[lints]
+workspace = true
 ```
 
-#### src/lib.rs
+#### packages/binance-api-rest/Cargo.toml
+
+```toml
+[package]
+name = "binance-api-rest"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+homepage.workspace = true
+repository.workspace = true
+keywords.workspace = true
+categories.workspace = true
+exclude.workspace = true
+
+[package.metadata.details]
+title = "Binance API REST client"
+
+[lints]
+workspace = true
+
+[dependencies]
+derive-getters = { workspace = true }
+derive-new = { workspace = true }
+derive_more = { workspace = true }
+errgonomic = { workspace = true }
+itertools = { workspace = true }
+standard-traits = { workspace = true }
+strum = { workspace = true }
+stub-macro = { workspace = true }
+subtype = { workspace = true }
+```
+
+#### packages/binance-api-cli/src/main.rs
 
 ```rust
-//! This is a module-level comment for a Rust lib
+fn main() {}
+```
+
+#### packages/binance-api-rest/src/lib.rs
+
+```rust
+//! REST API client for Binance.
 ```
