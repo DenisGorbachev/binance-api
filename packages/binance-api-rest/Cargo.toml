@@ -25,3 +25,5 @@ standard-traits = { workspace = true }
 strum = { workspace = true }
 stub-macro = { workspace = true }
 subtype = { workspace = true }
+rust_decimal = { workspace = true }
+timestamp-please = { workspace = true }
