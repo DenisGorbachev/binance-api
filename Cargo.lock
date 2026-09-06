@@ -36,7 +36,7 @@ dependencies = [
  "derive-getters",
  "derive-new",
  "derive_more 2.1.1",
- "errgonomic 0.5.1 (git+https://github.com/DenisGorbachev/errgonomic)",
+ "errgonomic 0.5.3",
  "itertools",
  "rust_decimal",
  "standard-traits",
@@ -232,8 +232,8 @@ dependencies = [
 
 [[package]]
 name = "errgonomic"
-version = "0.5.1"
-source = "git+https://github.com/DenisGorbachev/errgonomic#2b30275ee759decf53a39d72b19a4af8c637195d"
+version = "0.5.3"
+source = "git+https://github.com/DenisGorbachev/errgonomic#6fd76da339c7c4aa95641df9226af15494d76f72"
 dependencies = [
  "cfg-if",
  "tempfile",
@@ -696,7 +696,7 @@ version = "0.1.0"
 source = "git+https://github.com/DenisGorbachev/subtype#b0e33ef6780503d7f87b460840f7eb4261e43f0d"
 dependencies = [
  "derive_more 1.0.0",
- "errgonomic 0.5.1 (git+https://github.com/DenisGorbachev/errgonomic)",
+ "errgonomic 0.5.3",
  "pretty-type-name",
  "standard-traits",
 ]
@@ -778,7 +778,7 @@ name = "timestamp-please"
 version = "0.2.0"
 source = "git+https://github.com/DenisGorbachev/timestamp-please#5c7e9a571cfbe8fbb0b2ae119bdd6becfc583d9e"
 dependencies = [
- "errgonomic 0.5.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "errgonomic 0.5.1",
  "itoa",
  "thiserror",
 ]
